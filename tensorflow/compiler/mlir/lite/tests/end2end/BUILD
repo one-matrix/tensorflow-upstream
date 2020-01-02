@@ -1,4 +1,4 @@
-load("//tensorflow/compiler/mlir:glob_lit_test.bzl", "glob_lit_tests")
+1;4205;0cload("//tensorflow/compiler/mlir:glob_lit_test.bzl", "glob_lit_tests")
 
 licenses(["notice"])
 
@@ -8,6 +8,12 @@ glob_lit_tests(
         ":test_utilities",
     ],
     driver = "@llvm-project//mlir:run_lit.sh",
+    tags_override = {
+        "add.pbtxt": ["no_rocm"],
+        "conv_2d.pbtxt": ["no_rocm"],
+        "fake_quant_per_channel.pbtxt": ["no_rocm"],
+        "ophint_lstm.pbtxt": ["no_rocm"],
+    },
     test_file_exts = [
         "pbtxt",
     ],
