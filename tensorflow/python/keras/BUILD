@@ -1167,7 +1167,6 @@ cuda_py_test(
     srcs = ["layers/lstm_v2_test.py"],
     python_version = "PY3",
     shard_count = 12,
-    tags = ["no_rocm"],
     deps = [
         ":keras",
         "//tensorflow/python:client_testlib",
@@ -1182,7 +1181,6 @@ cuda_py_test(
     srcs = ["layers/gru_v2_test.py"],
     python_version = "PY3",
     shard_count = 12,
-    tags = ["no_rocm"],
     deps = [
         ":keras",
         "//tensorflow/python:client_testlib",
