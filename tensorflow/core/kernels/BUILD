@@ -243,7 +243,8 @@ tf_cuda_cc_test(
     name = "collective_nccl_test",
     size = "small",
     srcs = ["collective_nccl_test.cc"],
-    tags = tf_cuda_tests_tags() + ["no_cuda_on_cpu_tap"],
+    tags = tf_cuda_tests_tags() + ["no_cuda_on_cpu_tap"]
+    + ["no_rocm"], # times out with ROCm
     deps = [
         "//tensorflow/core:all_kernels",
         "//tensorflow/core:core_cpu",
